@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Row_no: 1
+  Col_no: 1
+  Value: 1
+
+two:
+  Row_no: 1
+  Col_no: 1
+  Value: 1

@@ -1,3 +1,33 @@
 // Place all the styles related to the Drinks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.buckets {
+	display: inline-flex;
+}
+
+.bucket {
+	border-width: 0.25em;
+	border-style: solid;
+	height: 12em;
+	width: 12em;
+	margin-left: 10em;
+	margin-right: 10em;
+	border-top-style: hidden;
+}
+
+.very {
+	border-color: green;
+}
+
+.somewhat {
+	border-color: orange;
+}
+
+.not {
+	border-color: red;
+}
+
+.bucket_name {
+	text-align: center;
+}

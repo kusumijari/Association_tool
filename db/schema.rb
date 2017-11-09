@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108061544) do
+ActiveRecord::Schema.define(version: 20171108080747) do
+
+  create_table "association_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "drinks", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "matrices", force: :cascade do |t|
+    t.integer "Row_no"
+    t.integer "Col_no"
+    t.integer "Value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

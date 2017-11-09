@@ -1,0 +1,32 @@
+<%= form_with(model: matrix, local: true) do |form| %>
+  <% if matrix.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(matrix.errors.count, "error") %> prohibited this matrix from being saved:</h2>
+
+      <ul>
+      <% matrix.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Row_no %>
+    <%= form.number_field :Row_no, id: :matrix_Row_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Col_no %>
+    <%= form.number_field :Col_no, id: :matrix_Col_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Value %>
+    <%= form.number_field :Value, id: :matrix_Value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

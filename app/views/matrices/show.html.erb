@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Row no:</strong>
+  <%= @matrix.Row_no %>
+</p>
+
+<p>
+  <strong>Col no:</strong>
+  <%= @matrix.Col_no %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @matrix.Value %>
+</p>
+
+<%= link_to 'Edit', edit_matrix_path(@matrix) %> |
+<%= link_to 'Back', matrices_path %>

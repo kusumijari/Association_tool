@@ -1,0 +1,2 @@
+class AssociationType < ApplicationRecord
+end

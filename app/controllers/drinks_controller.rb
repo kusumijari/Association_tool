@@ -10,6 +10,8 @@ class DrinksController < ApplicationController
   # GET /drinks/1
   # GET /drinks/1.json
   def show
+    drinks = Drink.all
+    @associate_with = @associate_with = drinks.reject { | d | d ==  Drink.find(params[:id]) } 
   end
 
   # GET /drinks/new
