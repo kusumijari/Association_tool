@@ -8,24 +8,26 @@
 <%= link_to 'Edit', edit_drink_path(@drink) %> |
 <%= link_to 'Back', drinks_path %>
 
+<div>
 <% @associate_with.each do |associate_drink| %>
-	<div id="dragMe" > 
-		<h1> <%= associate_drink.name %> </h1>
+	<div class="drinkName"> 
+		<h1 class="name dragMe"> <%= associate_drink.name %> </h1>
 	</div>
 
 	<div class="buckets">
-		<div class="dropHere">
-			<div class="bucket very"></div>
+		<div>
+			<div id="very" class="bucket very dropHere"></div>
 			<p class="bucket_name">Very related</p>
 		</div>
-		<div class="dropHere">
-			<div class="bucket somewhat"></div>
+		<div>
+			<div id="somewhat" class="bucket somewhat dropHere"></div>
 			<p class="bucket_name">Somewhat related</p>
 		</div>
-		<div class="dropHere	">
-			<div class="bucket not"></div>
+		<div>
+			<div id="not" class="bucket not dropHere"></div>
 			<p class="bucket_name">Not related</p>
 		</div>
 	</div>
 <% end %>
 
+</div>
