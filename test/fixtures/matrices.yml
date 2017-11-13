@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  Row_no: 1
-  Col_no: 1
-  Value: 1
+  Drink1: MyString
+  Drink2: MyString
+  Value: MyString
 
 two:
-  Row_no: 1
-  Col_no: 1
-  Value: 1
+  Drink1: MyString
+  Drink2: MyString
+  Value: MyString

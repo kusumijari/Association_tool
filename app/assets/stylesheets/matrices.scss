@@ -1,3 +1,73 @@
 // Place all the styles related to the Matrices controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.buckets {
+	display: inline-flex;
+}
+
+.bucket {
+	border-width: 0.25em;
+	border-style: solid;
+	height: 12em;
+	width: 12em;
+	margin-left: 10em;
+	margin-right: 10em;
+	border-top-style: hidden;
+	border-radius: 1em;
+    border-top-right-radius: 0em;
+    border-top-left-radius: 0em;
+}
+
+.very {
+	border-color: green;
+	&.ui-state-highlight {
+		box-shadow: 0 0 0.2em rgba(255,255,255,1) , 0 0 0.4em rgba(255,255,255,1) , 0 0 0.6em rgba(255,255,255,1) , 0 0 0.8em #c9e9d1 , 0 0 1.4em #c9e9d1 , 0 0 1.6em #c9e9d1 , 0 0 2em #c9e9d1 ;
+		border-top: hidden;
+		background-color: #ffffff; 
+	}
+}
+
+.somewhat {
+	border-color: orange;
+	&.ui-state-highlight {
+		box-shadow: 0 0 0.2em rgba(255,255,255,1) , 0 0 0.4em rgba(255,255,255,1) , 0 0 0.6em rgba(255,255,255,1) , 0 0 0.8em #ffe4b2 , 0 0 1.4em #ffe4b2 , 0 0 1.6em #ffe4b2 , 0 0 2em #ffe4b2 ;
+		border-top: hidden;
+		background-color: #ffffff; 
+	}
+}
+
+.not {
+	border-color: red;
+	&.ui-state-highlight {
+		box-shadow: 0 0 0.2em rgba(255,255,255,1) , 0 0 0.4em rgba(255,255,255,1) , 0 0 0.6em rgba(255,255,255,1) , 0 0 0.8em #FFCCCB , 0 0 1.4em #FFCCCB , 0 0 1.6em #FFCCCB , 0 0 2em #FFCCCB ;
+		border-top: hidden;
+		background-color: #ffffff; 
+	}
+}
+
+.bucket_name {
+	text-align: center;
+}
+
+body {
+	margin: 4em !important;
+}
+
+.name {
+	display: inline-block;
+	cursor: all-scroll;
+}
+
+.drinkName {
+	text-align: center;
+	margin-top: 3em;
+    margin-bottom: 3em;
+    display: inline-block;
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+}
+
+.drinkList {
+	text-align: center;
+}

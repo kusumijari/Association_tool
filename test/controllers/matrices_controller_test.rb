@@ -17,7 +17,7 @@ class MatricesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create matrix" do
     assert_difference('Matrix.count') do
-      post matrices_url, params: { matrix: { Col_no: @matrix.Col_no, Row_no: @matrix.Row_no, Value: @matrix.Value } }
+      post matrices_url, params: { matrix: { Drink1: @matrix.Drink1, Drink2: @matrix.Drink2, Value: @matrix.Value } }
     end
 
     assert_redirected_to matrix_url(Matrix.last)
@@ -34,7 +34,7 @@ class MatricesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update matrix" do
-    patch matrix_url(@matrix), params: { matrix: { Col_no: @matrix.Col_no, Row_no: @matrix.Row_no, Value: @matrix.Value } }
+    patch matrix_url(@matrix), params: { matrix: { Drink1: @matrix.Drink1, Drink2: @matrix.Drink2, Value: @matrix.Value } }
     assert_redirected_to matrix_url(@matrix)
   end
 

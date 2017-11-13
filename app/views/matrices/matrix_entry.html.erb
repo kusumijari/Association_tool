@@ -1,8 +1,3 @@
-<h1>New Matrix</h1>
-
-<%= render 'form', matrix: @matrix %>
-
-
 <div class="drinkList">
 <% @associate_with.each do |associate_drink| %>
 	<div class="drinkName"> 
@@ -32,7 +27,3 @@
 
 <div id="url"></div>
 <%= button_to 'Submit', {:controller => "matrices", :action => "test", :query_parameters => request.query_parameters, :drinkName => @drink.name} , :method=>:post  %>
-
-
-
-

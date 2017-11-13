@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108080747) do
+ActiveRecord::Schema.define(version: 20171112045745) do
 
   create_table "association_types", force: :cascade do |t|
     t.string "name"
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20171108080747) do
   end
 
   create_table "matrices", force: :cascade do |t|
-    t.integer "Row_no"
-    t.integer "Col_no"
-    t.integer "Value"
+    t.string "Drink1"
+    t.string "Drink2"
+    t.string "Value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
