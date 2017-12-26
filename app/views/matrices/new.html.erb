@@ -1,38 +1,34 @@
-<h1>New Matrix</h1>
-
-<%= render 'form', matrix: @matrix %>
-
-
-<div class="drinkList">
-<% @associate_with.each do |associate_drink| %>
-	<div class="drinkName"> 
-		<h1 class="name dragMe" id="<%= associate_drink.name %>" > <%= associate_drink.name %> </h1>
+<body>
+	<div class="drinkList">
+	<% @associate_with.each do |associate_drink| %>
+		<div class="drinkName"> 
+			<h1 class="name dragMe" id="<%= associate_drink.name %>" > <%= associate_drink.name %> </h1>
+		</div>
+	<% end %>
 	</div>
-<% end %>
-
-<div class="buckets">
-	<div>
-		<h2> <%= @drink.name %> </h2>
+	<div class="buckets">
+		<div>
+			<h2> <%= @drink.name %> </h2>
+		</div>
+		<div>
+			<div id="very" class="bucket very dropHere"></div>
+			<p class="bucket_name">Very related</p>
+		</div>
+		<div>
+			<div id="somewhat" class="bucket somewhat dropHere"></div>
+			<p class="bucket_name">Somewhat related</p>
+		</div>
+		<div>
+			<div id="not" class="bucket not dropHere"></div>
+			<p class="bucket_name">Not related</p>
+		</div>
 	</div>
-	<div>
-		<div id="very" class="bucket very dropHere"></div>
-		<p class="bucket_name">Very related</p>
-	</div>
-	<div>
-		<div id="somewhat" class="bucket somewhat dropHere"></div>
-		<p class="bucket_name">Somewhat related</p>
-	</div>
-	<div>
-		<div id="not" class="bucket not dropHere"></div>
-		<p class="bucket_name">Not related</p>
-	</div>
-</div>
 
-<%= link_to 'Back', matrices_path %>
+	<%= link_to 'Back', matrices_path %>
 
-<div id="url"></div>
-<%= button_to 'Submit', {:controller => "matrices", :action => "test", :query_parameters => request.query_parameters, :drinkName => @drink.name} , :method=>:post  %>
-
+	<div id="url"></div>
+	<%= button_to 'Submit', {:controller => "matrices", :action => "test", :query_parameters => request.query_parameters, :drinkName => @drink.name} , :method=>:post  %>
+</body>
 
 
 

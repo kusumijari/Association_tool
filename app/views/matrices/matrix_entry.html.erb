@@ -1,14 +1,15 @@
+<p class="center"> How related are the following drinks to <%= @drink.name %>?</p>
+<p class="center"> Please drag and drop in the respective circles </p>	
+
 <div class="drinkList">
 <% @associate_with.each do |associate_drink| %>
 	<div class="drinkName"> 
-		<h1 class="name dragMe" id="<%= associate_drink.name %>" > <%= associate_drink.name %> </h1>
+		<span class="name dragMe" id="<%= associate_drink.name %>" > <%= associate_drink.name %> </span>
 	</div>
 <% end %>
+</div>
 
 <div class="buckets">
-	<div>
-		<h2> <%= @drink.name %> </h2>
-	</div>
 	<div>
 		<div id="very" class="bucket very dropHere"></div>
 		<p class="bucket_name">Very related</p>
@@ -23,7 +24,6 @@
 	</div>
 </div>
 
-<%= link_to 'Back', matrices_path %>
-
 <div id="url"></div>
-<%= button_to 'Submit', {:controller => "matrices", :action => "test", :query_parameters => request.query_parameters, :drinkName => @drink.name} , :method=>:post  %>
+<div class="center"> <%= button_to 'Submit', {:controller => "matrices", :action => "test", :query_parameters => request.query_parameters, :drinkName => @drink.name} , :method=>:post  %>
+</div>
