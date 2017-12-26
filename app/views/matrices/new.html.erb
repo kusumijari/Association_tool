@@ -27,7 +27,7 @@
 	<%= link_to 'Back', matrices_path %>
 
 	<div id="url"></div>
-	<%= button_to 'Submit', {:controller => "matrices", :action => "test", :query_parameters => request.query_parameters, :drinkName => @drink.name} , :method=>:post  %>
+	<%= button_to 'Submit', {:controller => "matrices", :action => "save_entry", :query_parameters => request.query_parameters, :drinkName => @drink.name} , :method=>:post  %>
 </body>
 
 

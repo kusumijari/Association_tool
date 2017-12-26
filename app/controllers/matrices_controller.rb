@@ -54,7 +54,7 @@ class MatricesController < ApplicationController
     @associate_with = @drinks.reject { | d | (drink_list.include?(d.name) || d == Drink.find(@drink.id)) } 
   end
 
-  def test
+  def save_entry
     puts "testing ***********"
     puts "Params " + params[:drinkName]
     drinkName = params[:drinkName]

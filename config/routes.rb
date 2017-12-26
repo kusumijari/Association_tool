@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :drinks
   root 'application#hello'
   post 'associate_drink' => 'drinks#associate'
-  post 'test' => 'matrices#test'
+  post 'save_entry' => 'matrices#save_entry'
   get 'completed' => 'matrices#completed'
   get 'matrices/:name/matrix_entry' => 'matrices#matrix_entry' 
   get 'matrices/home' => 'matrices#home', :as =>	'home'

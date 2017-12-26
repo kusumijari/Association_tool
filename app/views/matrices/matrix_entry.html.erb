@@ -25,5 +25,5 @@
 </div>
 
 <div id="url"></div>
-<div class="center"> <%= button_to 'Submit', {:controller => "matrices", :action => "test", :query_parameters => request.query_parameters, :drinkName => @drink.name} , :method=>:post  %>
+<div class="center"> <%= button_to 'Submit', {:controller => "matrices", :action => "save_entry", :query_parameters => request.query_parameters, :drinkName => @drink.name} , :method=>:post  %>
 </div>
