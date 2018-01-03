@@ -25,7 +25,32 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Matrix', new_matrix_path %>
+
+<table class="drink_matrix">
+  <tr>
+    <th>
+    </th>
+    <% @drinks.each do |drink| %>
+      <th> 
+        <span class="table_heading" > <%= drink.name %> </span>
+      </th>
+    <% end %>
+  </tr>
+  <tr>
+    <% @drinks.each do |drink1| %>
+      <th> 
+        <span class="table_heading" > <%= drink1.name %> </span>
+      </th>
+      <% @drinks.each do |drink2| %>
+          <% @matrices.each do |matrix| %>
+            <% if ( (drink1.name != drink2.name ) && (drink1.name == matrix.Drink1 && drink2.name == matrix.Drink2) || (drink2.name == matrix.Drink1 && drink1.name == matrix.Drink2) ) %>
+              <td > <%= matrix.Value %> </td>
+            <% end %>
+          <% end %>
+      <% end %>
+    <% end %>
+  </tr>
+</table>

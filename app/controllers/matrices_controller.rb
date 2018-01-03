@@ -5,6 +5,7 @@ class MatricesController < ApplicationController
   # GET /matrices.json
   def index
     @matrices = Matrix.all
+    @drinks = Drink.all
   end
 
   # GET /matrices/1
@@ -51,24 +52,25 @@ class MatricesController < ApplicationController
       end
     end
 
+    puts "****************** drink is " + params[:name]
     @associate_with = @drinks.reject { | d | (drink_list.include?(d.name) || d == Drink.find(@drink.id)) } 
   end
 
   def save_entry
     puts "testing ***********"
-    puts "Params " + params[:drinkName]
+    puts "Drink name is  " + params[:drinkName]
     drinkName = params[:drinkName]
     @drinks = Drink.all
     @drink = Drink.find_by_name(drinkName)
-    puts "Drink is " + @drink.name
     @associate_with = @drinks.reject { | d | d ==  Drink.find(@drink.id) }
     @associate_with.each do | associate |
       puts "******************"  + associate.name
-      if !params[:query_parameters][associate.name].nil?
+      if !params[associate.name].nil?
+        puts "Query param is " + params[associate.name]
         puts "Drink 1" + drinkName
         puts "Drink 2" + associate.name
-        puts "Value " + params[:query_parameters][associate.name]
-        matrix_entry = Matrix.new('Drink1' => drinkName, 'Drink2' => associate.name, 'Value' => params[:query_parameters][associate.name])
+        puts "Value " + params[associate.name]
+        matrix_entry = Matrix.new('Drink1' => drinkName, 'Drink2' => associate.name, 'Value' => params[associate.name])
         is_present = Matrix.where(:Drink1=>drinkName).where(:Drink2=>associate.name).first
         is_also_present = Matrix.where(:Drink1=>associate.name).where(:Drink2=>drinkName).first
         puts "Is it present ? " + is_present.nil?.to_s + "################################# " + is_also_present.nil?.to_s 
@@ -78,7 +80,7 @@ class MatricesController < ApplicationController
           entry = is_present.nil? ? is_also_present : is_present
           entry['Drink1'] = drinkName
           entry['Drink2'] = associate.name
-          entry['Value'] =  params[:query_parameters][associate.name]
+          entry['Value'] =  params[associate.name]
           entry.save
         end
       end

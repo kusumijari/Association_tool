@@ -1,10 +1,12 @@
 <p class="center"> How related are the following drinks to <%= @drink.name %>?</p>
 <p class="center"> Please drag and drop in the respective circles </p>	
 
+<%= form_for Matrix.new, url: {:action => "save_entry", :query_parameters => request.query_parameters, :drinkName => @drink.name} do |f| %>
 <div class="drinkList">
 <% @associate_with.each do |associate_drink| %>
 	<div class="drinkName"> 
 		<span class="name dragMe" id="<%= associate_drink.name %>" > <%= associate_drink.name %> </span>
+		<%= hidden_field_tag(associate_drink.name, "empty") %>
 	</div>
 <% end %>
 </div>
@@ -24,6 +26,5 @@
 	</div>
 </div>
 
-<div id="url"></div>
-<div class="center"> <%= button_to 'Submit', {:controller => "matrices", :action => "save_entry", :query_parameters => request.query_parameters, :drinkName => @drink.name} , :method=>:post  %>
-</div>
+<%= f.submit "Submit", :class => 'center'%>
+<% end %>

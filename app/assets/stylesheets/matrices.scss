@@ -76,3 +76,11 @@ body {
 .center {
 	text-align: center;
 }
+
+.drink_matrix {
+	border-spacing: 0em;
+	td, th {
+  		border: solid 0.1em black;
+  		margin: 0em;
+	}
+}
