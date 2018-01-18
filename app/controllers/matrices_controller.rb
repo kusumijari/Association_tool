@@ -1,5 +1,6 @@
 class MatricesController < ApplicationController
-  before_action :set_matrix, only: [:show, :edit, :update, :destroy]
+  before_action :set_matrix, only: [:show, :edit, :update]
+  skip_before_action :set_matrix, only: [:remove_things]
 
   # GET /matrices
   # GET /matrices.json
@@ -115,8 +116,8 @@ class MatricesController < ApplicationController
 
   # DELETE /matrices/1
   # DELETE /matrices/1.json
-  def destroy
-    @matrix.destroy
+  def remove_things
+    Matrix.destroy_all
     respond_to do |format|
       format.html { redirect_to matrices_url, notice: 'Matrix was successfully destroyed.' }
       format.json { head :no_content }

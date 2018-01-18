@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'save_entry' => 'matrices#save_entry'
   get 'completed' => 'matrices#completed'
   get 'matrices/:name/matrix_entry' => 'matrices#matrix_entry' 
+  post 'matrices/remove_things' => 'matrices#remove_things'
   get 'matrices/home' => 'matrices#home', :as =>	'home'
 end
 

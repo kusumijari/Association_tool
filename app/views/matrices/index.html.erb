@@ -1,33 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Matrices</h1>
+<h1>Matrix</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Drink1</th>
-      <th>Drink2</th>
-      <th>Value</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @matrices.each do |matrix| %>
-      <tr>
-        <td><%= matrix.Drink1 %></td>
-        <td><%= matrix.Drink2 %></td>
-        <td><%= matrix.Value %></td>
-        <td><%= link_to 'Show', matrix %></td>
-        <td><%= link_to 'Edit', edit_matrix_path(matrix) %></td>
-        <td><%= link_to 'Destroy', matrix, method: :delete %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= button_to  'Clear Matrix', {:controller => :matrices, :action => :remove_things} %>
+
 <br>
 
-<%= link_to 'New Matrix', new_matrix_path %>
 
 <table class="drink_matrix">
   <tr>
@@ -39,18 +18,22 @@
       </th>
     <% end %>
   </tr>
-  <tr>
-    <% @drinks.each do |drink1| %>
+  <% @drinks.each do |drink1| %>
+    <tr>
       <th> 
         <span class="table_heading" > <%= drink1.name %> </span>
       </th>
       <% @drinks.each do |drink2| %>
-          <% @matrices.each do |matrix| %>
-            <% if ( (drink1.name != drink2.name ) && (drink1.name == matrix.Drink1 && drink2.name == matrix.Drink2) || (drink2.name == matrix.Drink1 && drink1.name == matrix.Drink2) ) %>
-              <td > <%= matrix.Value %> </td>
+          <% if (drink1.name == drink2.name) %>
+            <td> x </td>
+          <% else %>
+            <% @matrices.each do |matrix| %>
+              <% if ( (drink1.name == matrix.Drink1 && drink2.name == matrix.Drink2) || (drink2.name == matrix.Drink1 && drink1.name == matrix.Drink2) ) %>
+                  <td > <%= matrix.Value %> </td>
+              <% end %>
             <% end %>
-          <% end %>
+          <% end %>    
       <% end %>
-    <% end %>
-  </tr>
+    </tr>
+  <% end %>
 </table>
